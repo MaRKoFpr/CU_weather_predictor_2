@@ -8,5 +8,5 @@ def city_location(city):
 
     if location is None:
         location = geolocator.geocode("Лох")
-    return location.latitude, location.longitude
+    return {"lat": location.latitude, "lon": location.longitude}
 

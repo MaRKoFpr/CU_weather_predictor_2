@@ -6,22 +6,14 @@
     <title>Форма координат</title>
 </head>
 <body>
-    <h1>Введите координаты</h1>
+    <h1>Введите названия городов</h1>
     <form method="POST" action="/get-weather">
-        <label for="start_lat">Старт широта (Latitude):</label>
-        <input type="text" id="start_lat" name="start_lat" required>
+        <label for="start_lat">Стартовый город</label>
+        <input type="text" id="start_lat" name="start_city" required>
         <br><br>
 
-        <label for="start_lon">Старт долгота (Longitude):</label>
-        <input type="text" id="start_lon" name="start_lon" required>
-        <br><br>
-
-        <label for="finish_lat">Финиш Широта (Latitude):</label>
-        <input type="text" id="finish_lat" name="finish_lat" required>
-        <br><br>
-
-        <label for="finish_lon">Финиш Долгота (Longitude):</label>
-        <input type="text" id="finish_lon" name="finish_lon" required>
+        <label for="start_lon">Конечный город</label>
+        <input type="text" id="start_lon" name="finish_city" required>
         <br><br>
         <button type="submit">Отправить</button>
     </form>

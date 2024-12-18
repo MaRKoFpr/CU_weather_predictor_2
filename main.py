@@ -15,15 +15,21 @@ def index():
 
 @app.route('/get-weather', methods=['POST'])
 def show_weather_info():
-    start_lat = request.form.get('start_lat')
-    start_lon = request.form.get('start_lon')
-    finish_lat = request.form.get('finish_lat')
-    finish_lon = request.form.get('finish_lon')
+    start_city = request.form.get('start_city')
+    finish_city = request.form.get('finish_city')
+
+    if not start_city or not finish_city:
+        return render_template('form.html', error="Все поля формы должны быть заполнены!")
+
+    start_city_loc = city_location(start_city)
+    finish_city_loc = city_location(finish_city)
+
+    start_lat = start_city_loc['lat']
+    start_lon = start_city_loc['lon']
+    finish_lat = finish_city_loc['lat']
+    finish_lon = finish_city_loc['lon']
     location_key = get_location_key(start_lat, start_lon)
     start_weather_data = get_weather_data(location_key)
-
-    if not start_lat or not start_lon or not finish_lat or not finish_lon:
-        return render_template('form.html', error="Все поля формы должны быть заполнены!")
 
     start_forecast = start_weather_data['DailyForecasts'][0]
     start_mx_temperature = start_forecast['Temperature']['Maximum']['Value']
