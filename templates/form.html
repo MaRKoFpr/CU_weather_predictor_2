@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма координат</title>
+</head>
+<body>
+    <h1>Введите координаты</h1>
+    <form method="POST" action="/get-weather">
+        <label for="start_lat">Старт широта (Latitude):</label>
+        <input type="text" id="start_lat" name="start_lat" required>
+        <br><br>
+
+        <label for="start_lon">Старт долгота (Longitude):</label>
+        <input type="text" id="start_lon" name="start_lon" required>
+        <br><br>
+
+        <label for="finish_lat">Финиш Широта (Latitude):</label>
+        <input type="text" id="finish_lat" name="finish_lat" required>
+        <br><br>
+
+        <label for="finish_lon">Финиш Долгота (Longitude):</label>
+        <input type="text" id="finish_lon" name="finish_lon" required>
+        <br><br>
+        <button type="submit">Отправить</button>
+    </form>
+    {% if start_description %}
+    <p>погода в стартовой точке</p>
+    <p>{{start_description}}</p>
+    {% else %}
+        <p></p>
+    {% endif %}
+
+    {% if finish_description %}
+    <p>погода в финишной точке</p>
+    <p>{{finish_description}}</p>
+    {% else %}
+        <p></p>
+    {% endif %}
+</body>
+</html>
