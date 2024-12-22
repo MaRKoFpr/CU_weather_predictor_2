@@ -8,7 +8,7 @@ from geopy.exc import GeopyError
 import plotly.graph_objs as go
 from City import City
 
-API_KEY = "5emXwRzKHeYlW3wyTb2Ft8l99qbHlkqt"
+API_KEY = "" #Ваш API ключ
 BASE_URL = "http://dataservice.accuweather.com"
 
 app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])

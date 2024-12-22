@@ -58,9 +58,6 @@ class City:
     def get_name(self):
         return self.name
 
-    def set_coord(self, coord):
-        self.coord = coord
-
     def get_coord(self):
         return self.coord
 
@@ -78,9 +75,6 @@ class City:
 
     def get_loc_key(self):
         return self.loc_key
-
-    def set_forecast(self):
-        pass
 
 
 if __name__ == "__main__":
